@@ -2,21 +2,57 @@
 <html>
 <style type="text/css">
 	.main-page-header{
-		background-color: black;
+		background-color: white;
 		border-radius: 1rem;
+		border:1px solid black;
 		text-align: center;
-		color: white;
+		color: black;
 	}
 
 	.content{
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
+	}
+	.professional-history{
+		
+	}
+	.cv-maincontent-block{
+		display: flex;
+		flex-direction:column; 
+		border-radius: 1rem;
+		color: black;
+		background-color: lightgrey;
+		margin-bottom: 2rem;
+	}
+	.professional-background-header{
+		
+	}
+	.professional-background-journeys{
+		padding-left: 3rem;
+	}
+	.cv-maincontent-header{
+		padding-left: 2rem;
 	}
 </style>
 <body>
 <h1 class="main-page-header">Pedro Pinto</h1>
-<div class="content">
-	<p>Under construction...</p>
-</div>
+	<div class="content">
+		<div class="professional-history cv-maincontent-block">
+			<div class="professional-background-header cv-maincontent-header">Professional Background:</div>
+			<div class="professional-background-journeys">
+				<ul>
+					<li id="current-professional-state">Software Engineer @ Bosch - Braga</li>
+				</ul>
+			</div>
+		</div>
+		<div class="academic-history cv-maincontent-block">
+
+			<div id="college-background">
+				<div class="professional-background-header cv-maincontent-header">Academic Background:</div>
+				<div>Master in Engineering and Management of Information Systems</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
