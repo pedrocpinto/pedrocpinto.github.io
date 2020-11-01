@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <style type="text/css">
+	.body{
+		font-family: 'Courier New';
+	}
 	.main-page-header{
-		background-color: white;
-		border-radius: 1rem;
-		border:1px solid black;
+		width: 100%;
+		height: 125px;
+		background: radial-gradient( #316ef1,#0515fc);
 		text-align: center;
-		color: black;
+		color: white;
+		text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+		display: flex;
+   		flex-direction: row;
+    	justify-content: center;
+}
 	}
 
 	.content{
@@ -34,33 +42,127 @@
 	}
 	.cv-maincontent-header{
 		padding-left: 2rem;
+		text-align: center;
 	}
-	.items-list-holder{
-		padding-left: 3rem;
+	
+	.timeline-card-holder{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		
 	}
+	.timeline-card{
+		background: linear-gradient(0deg,lightgray,white);
+		width: 500px;
+		min-height: 50px;
+		border-radius: 5px;
+		padding: 0 5px 0 5px;
+		box-shadow:rgba(36, 37, 38, 0.04) 4px 4px 15px 0px
+	}
+
+	.timeline-group{
+		margin-bottom: 2rem;
+	}
+
+	.skills-cards-holder{
+		width: 80%;
+		max-width: 500px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+
+	.skills-card{
+		background-color: lightgray;
+		width: 100px;
+		min-height: 50px;
+		border-radius: 5px;
+		padding: 0 5px 0 5px;
+		margin: 0 5px 0 5px;
+		color: white;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	.professional-company{
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	#laravel-skills-card{
+	
+		background: linear-gradient(0deg,#eb920d,lightsalmon);
+	}
+	#javacsript-skills-card{
+		background: linear-gradient(0deg,#f19a1a,#ffc73c);
+	}
+	#css-skills-card{
+		background: linear-gradient(0deg,#0c22e2,#2d30da);
+	}
+	.profile-holder{
+		width: 500px;
+    	display: flex;
+    	flex-direction: row;
+    	justify-content: flex-start;
+    	align-items: center;
+	
+	}
+	.profile-photo{
+		width: 140px;
+   		height: 120px;
+    	margin-right: 2rem;
+		box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+	}
+
+
 </style>
 <body>
-<h1 class="main-page-header">Pedro Pinto</h1>
-	<div class="content">
-		<div class="professional-history cv-maincontent-block">
-			<div class="professional-background-header cv-maincontent-header">Professional Background:</div>
-			<div class="professional-background-journeys items-list-holder">
-				<ul>
-					<li id="current-professional-state">Software Engineer @ Bosch - Braga</li>
-				</ul>
-			</div>
+	<h1 class="main-page-header">
+		<div class="profile-holder">
+			<img class="profile-photo" src="img/profilePhoto.jpg"></img>
+			<span class="profile-name">Pedro Pinto</span>
 		</div>
-		<div class="academic-history cv-maincontent-block">
-
-			<div id="college-background">
-				<div class="professional-background-header cv-maincontent-header">Academic Background:</div>
-				<div class="items-list-holder">
-					<ul>
-						<li>Master in Engineering and Management of Information Systems</li>
-					</ul>
+		
+	</h1>
+	<div class="content">
+		<div class="professional-history timeline-group">
+			<h3 class="professional-background-header cv-maincontent-header">Professional Background</h3>
+			<div class="professional-background-journeys timeline-card-holder">
+				<div id="current-professional-state" class="timeline-card">
+					<div class="professional-title">Software Engineer</div>
+					<div class="professional-company">
+						<div class="professional-company-name">@ Bosch -</div>
+						<div class="professional-company-place"> Braga </div>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div class="academic-history timeline-group">
+				<h3 class="professional-background-header cv-maincontent-header">Academic Background</h3>
+				<div class="items-list-holder  timeline-card-holder">
+					<div class="timeline-card">
+						Master in Engineering and Management of Information Systems
+					</div>
+				</div>		
+		</div>
+		<div class="skills-holder timeline-group">
+			<h3 class="skills-header cv-maincontent-header">Skills</h3>
+			<div class="items-list-holder  timeline-card-holder">
+				<div class="skills-cards-holder">
+					<div id="laravel-skills-card" class="skills-card">
+						Laravel
+					</div>		
+					<div id="javacsript-skills-card" class="skills-card">
+						Javascript
+					</div>	
+					<div id="css-skills-card" class="skills-card">
+						CSS
+					</div>	
+				</div>
+			</div>		
+	</div>
 	</div>
 </body>
 </html>
