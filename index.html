@@ -1,31 +1,32 @@
 <!DOCTYPE html>
 <html>
 <style type="text/css">
+
 	.body{
 		font-family: 'Courier New';
 	}
 	.main-page-header{
 		width: 100%;
-		height: 125px;
-		background: radial-gradient( #316ef1,#0515fc);
+		height: 100px;
+	
 		text-align: center;
 		color: white;
 		text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
 		display: flex;
    		flex-direction: row;
     	justify-content: center;
-}
+
 	}
 
-	.content{
+	.content-holder{
+		background-color: steelblue;
+		padding: 0 5rem 0 5rem;
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		padding: 0 5rem 0 5rem;
+		flex-wrap: wrap;
+    	justify-content: space-evenly;
 	}
-	.professional-history{
-		
-	}
+
 	.cv-maincontent-block{
 		display: flex;
 		flex-direction:column; 
@@ -34,20 +35,16 @@
 		background-color: lightgrey;
 		margin-bottom: 2rem;
 	}
-	.professional-background-header{
-		
-	}
-	.professional-background-journeys{
-		
-	}
+
 	.cv-maincontent-header{
-		padding-left: 2rem;
+	
 		text-align: center;
 	}
 	
 	.timeline-card-holder{
 		display: flex;
 		flex-direction: column;
+		flex-wrap: wrap;
 		align-items: center;
 		
 	}
@@ -69,6 +66,7 @@
 		max-width: 500px;
 		display: flex;
 		flex-direction: row;
+		flex-wrap: wrap;
 		justify-content: space-between;
 	}
 
@@ -84,6 +82,10 @@
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
+		flex-grow: 1;
+		margin-bottom: 1rem;
+		box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+		text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
 	}
 	.professional-company{
 		display: flex;
@@ -102,19 +104,178 @@
 		background: linear-gradient(0deg,#0c22e2,#2d30da);
 	}
 	.profile-holder{
-		width: 500px;
-    	display: flex;
-    	flex-direction: row;
-    	justify-content: flex-start;
-    	align-items: center;
+		width: 530px;
+		display: flex;
+		flex-direction: row;
+		justify-content: flex-start;
+		align-items: center;
+		background: darksalmon
 	
 	}
 	.profile-photo{
-		width: 140px;
-   		height: 120px;
+		max-width: 170px;
+		width: 100%;
+   		height: auto;
     	margin-right: 2rem;
 		box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+		border-radius:10%;
+		
 	}
+	.profile-personal-info{
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.content-timeline{
+		flex-grow:13;
+		min-width: 600px;
+	}
+	.skills-holder{
+		border-radius: 6px;
+		width: 100%;
+		color: white;
+		text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+	}
+	
+
+
+
+
+
+	* {
+  box-sizing: border-box;
+}
+
+/* Set a background color */
+body {
+  background-color: steelblue;
+  font-family: Helvetica, sans-serif;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #474e5d;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.content-timeline .container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.content-timeline .container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #FF9F55;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.content-timeline .left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.content-timeline .right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.content-timeline .left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.content-timeline .right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.content-timeline .right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content-timeline .content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+/* Place the timelime to the left */
+  .content-timeline .timeline::after {
+    left: 31px;
+  }
+
+/* Full-width containers */
+ .content-timeline  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+/* Make sure that all arrows are pointing leftwards */
+ .content-timeline  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+/* Make sure all circles are at the same spot */
+  .content-timeline .left::after, .right::after {
+    left: 15px;
+  }
+
+/* Make all right containers behave like the left ones */
+  .content-timeline .right {
+    left: 0%;
+  }
+}
 
 
 </style>
@@ -122,47 +283,56 @@
 	<h1 class="main-page-header">
 		<div class="profile-holder">
 			<img class="profile-photo" src="img/profilePhoto.jpg"></img>
-			<span class="profile-name">Pedro Pinto</span>
+			<div class="profile-personal-info">
+				<span class="profile-name">Pedro Pinto</span>
+				<span class="profile-profession">Software Engineer</span>		
+			</div>
+		
 		</div>
 		
 	</h1>
-	<div class="content">
-		<div class="professional-history timeline-group">
-			<h3 class="professional-background-header cv-maincontent-header">Professional Background</h3>
-			<div class="professional-background-journeys timeline-card-holder">
-				<div id="current-professional-state" class="timeline-card">
-					<div class="professional-title">Software Engineer</div>
-					<div class="professional-company">
-						<div class="professional-company-name">@ Bosch -</div>
-						<div class="professional-company-place"> Braga </div>
-					</div>
+	<div class="content-holder">
+		<div class="content-timeline">
+			<div class="timeline">
+				<div class="container left">
+				  <div class="content">
+					<h2>2019</h2>
+					<p>Software Engineer</p>
+					<p>Bosch - Braga</p>
+				  </div>
 				</div>
-			</div>
-		</div>
-		<div class="academic-history timeline-group">
-				<h3 class="professional-background-header cv-maincontent-header">Academic Background</h3>
-				<div class="items-list-holder  timeline-card-holder">
-					<div class="timeline-card">
-						Master in Engineering and Management of Information Systems
-					</div>
-				</div>		
+				<div class="container right">
+				  <div class="content">
+					<h2>2018</h2>
+					<p>MIEGSI</p>
+					<p>Universidade do Minho</p>
+				  </div>
+				</div>
+			  </div>
 		</div>
 		<div class="skills-holder timeline-group">
+			
 			<h3 class="skills-header cv-maincontent-header">Skills</h3>
-			<div class="items-list-holder  timeline-card-holder">
-				<div class="skills-cards-holder">
-					<div id="laravel-skills-card" class="skills-card">
-						Laravel
-					</div>		
-					<div id="javacsript-skills-card" class="skills-card">
-						Javascript
-					</div>	
-					<div id="css-skills-card" class="skills-card">
-						CSS
+			
+			<div class="container">
+				<div class="container-inner">
+					<div class="items-list-holder  timeline-card-holder">
+						<div class="skills-cards-holder">
+							<div id="laravel-skills-card" class="skills-card">
+								Laravel
+							</div>		
+							<div id="javacsript-skills-card" class="skills-card">
+								Javascript
+							</div>	
+							<div id="css-skills-card" class="skills-card">
+								CSS
+							</div>	
+						</div>
 					</div>	
 				</div>
-			</div>		
+			</div>
+		</div>	
 	</div>
-	</div>
+
 </body>
 </html>
