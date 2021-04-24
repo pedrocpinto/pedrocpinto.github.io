@@ -43,6 +43,9 @@
 	
 		text-align: center;
 	}
+	.profile-profession{
+		font-size: 24px;
+	}
 	
 	.timeline-card-holder{
 		display: flex;
@@ -58,6 +61,10 @@
 		border-radius: 5px;
 		padding: 0 5px 0 5px;
 		box-shadow:rgba(36, 37, 38, 0.04) 4px 4px 15px 0px
+
+	}
+	.timeline-event{
+     	font-family: "Lucida Console", "Courier New", monospace;
 	}
 
 	.timeline-group{
@@ -65,8 +72,6 @@
 	}
 
 	.skills-cards-holder{
-		width: 80%;
-		max-width: 500px;
 		display: flex;
 		flex-direction: row;
 		flex-wrap: wrap;
@@ -74,13 +79,14 @@
 	}
 
 	.skills-card{
-		background-color: lightgray;
-		width: 100px;
+		background-color: white;
+		width: 200px;
 		min-height: 50px;
 		border-radius: 5px;
 		padding: 0 5px 0 5px;
 		margin: 0 5px 0 5px;
-		color: white;
+		color: black;
+		font-weight: bold;
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
@@ -97,6 +103,10 @@
 		 transition: transform .2s
 	}
 
+	.skill-description{
+		display: none;
+	}
+
 	.professional-company{
 		display: flex;
 		flex-direction: row;
@@ -105,13 +115,13 @@
 
 	#laravel-skills-card{
 	
-		background: linear-gradient(0deg,#eb920d,lightsalmon);
+		background: linear-gradient(270deg,white,white);
 	}
 	#javacsript-skills-card{
-		background: linear-gradient(0deg,#f19a1a,#ffc73c);
+		background: linear-gradient(180deg,white,white);
 	}
 	#css-skills-card{
-		background: linear-gradient(0deg,#0c22e2,#2d30da);
+		background: linear-gradient(0deg,white,white);
 	}
 	.profile-holder{
 		width: 530px;
@@ -131,10 +141,25 @@
 		border-radius:10%;
 		
 	}
+	.skills-image{
+		max-width: 80px;
+	}
+
+	.contact{
+		text-decoration: none;
+	}
+	.contact-image
+	{
+		max-width: 20px;
+	}
+	.contact-image:not(.mail){
+		background-color: white;
+	}
 	.profile-personal-info{
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
+		align-items: end;
 	}
 	.content-timeline{
 		flex-grow:13;
@@ -145,6 +170,10 @@
 		width: 100%;
 		color: white;
 		text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+	}
+
+	.range-date{
+		color: gray;
 	}
 	
 
@@ -288,6 +317,8 @@ body {
 }
 
 
+
+
 </style>
 <body>
 	<h1 class="main-page-header">
@@ -295,7 +326,18 @@ body {
 			<img class="profile-photo" src="img/profilePhoto.jpg"></img>
 			<div class="profile-personal-info">
 				<span class="profile-name">Pedro Pinto</span>
-				<span class="profile-profession">Software Engineer</span>		
+				<span class="profile-profession">Software Engineer</span>
+				<div class="contacts-holder">
+					<a class="contact" href="https://www.linkedin.com/in/jpedropinto/" target="_blank">
+						<img class="contact-image" alt="linkeidn" src="img/linkedin.png">
+					</a>		
+					<a class="contact" href="https://github.com/pedrocpinto" target="_blank">
+						<img class="contact-image" alt="github" src="img/github.png">
+					</a>	
+					<a class="contact" href="mailto: pedro1pinto2@hotmail.com" target="_blank">
+						<img class="contact-image mail" alt="mail" src="img/mail.png">
+					</a>		
+				</div>		
 			</div>
 		
 		</div>
@@ -304,22 +346,24 @@ body {
 	<div class="content-holder">
 		<div class="content-timeline">
 			<div class="timeline">
-				<div class="container left">
+				<div class="container left timeline-event">
 				  <div class="content">
-					<h2>2019 - now</h2>
+					<h2 class="range-date">2019 - presente</h2>
 					<p>Software Engineer</p>
-					<p>Bosch - Braga</p>
+					<p>Bosch Car Multimedia - Braga</p>
 				  </div>
 				</div>
-				<div class="container right">
+				<div class="container right timeline-event">
 				  <div class="content">
-					<h2>2013 - 2018</h2>
+					<h2 class="range-date">2013 - 2018</h2>
 					<p>Mestrado Integrado em Engenharia e Gestão de Sistemas de Informação</p>
 					<p>Universidade do Minho - Guimarães</p>
 				  </div>
 				</div>
 			  </div>
 		</div>
+		
+		</div>	
 		<div class="skills-holder timeline-group">
 			
 			<h3 class="skills-header cv-maincontent-header">Skills</h3>
@@ -329,19 +373,51 @@ body {
 					<div class="items-list-holder  timeline-card-holder">
 						<div class="skills-cards-holder">
 							<div id="laravel-skills-card" class="skills-card">
-								Laravel
-							</div>		
+								<a class="skills-link" href="https://laravel.com" target="_blank">
+									<img class="skills-image" alt="laravel" src="img/laravel.png">
+								</a>
+								<div class="skill-description"> Laravel </div>
+							</div>	
+							<div id="php-skills-card" class="skills-card">
+								<a class="skills-link" href="https://www.php.net/" target="_blank">
+									<img class="skills-image" alt="php" src="img/php.png">
+								</a>
+								<div class="skill-description"> PHP </div>
+							</div>	
+							<div id="mysql-skills-card" class="skills-card">
+								<a class="skills-link" href="https://www.mysql.com/" target="_blank">
+									<img class="skills-image" alt="mysql" src="img/mysql.png">
+								</a>
+								<div class="skill-description"> MySQL </div>
+							</div>				
 							<div id="javacsript-skills-card" class="skills-card">
-								Javascript
+								<a class="skills-link" href="https://www.w3schools.com/js/" target="_blank">
+									<img class="skills-image" alt="laravel" src="img/javascript.png">
+								</a>
+								<div class="skill-description"> Javascript </div>
+							</div>	
+							<div id="html-skills-card" class="skills-card">
+								<a class="skills-link" href="https://www.w3schools.com/html/" target="_blank">
+									<img class="skills-image" alt="html" src="img/html.png">
+								</a>
+								<div class="skill-description"> HTML </div>
 							</div>	
 							<div id="css-skills-card" class="skills-card">
-								CSS
+								<a class="skills-link" href="https://www.w3schools.com/css/" target="_blank">
+									<img class="skills-image" alt="css" src="img/css.png">
+								</a>
+								<div class="skill-description"> CSS </div>
+							</div>	
+							<div id="sass-skills-card" class="skills-card">
+								<a class="skills-link" href="https://sass-lang.com/ target="_blank">
+									<img class="skills-image" alt="sass" src="img/sass.png">
+								</a>
+								<div class="skill-description"> SASS </div>
 							</div>	
 						</div>
 					</div>	
 				</div>
 			</div>
-		</div>	
 	</div>
 
 </body>
