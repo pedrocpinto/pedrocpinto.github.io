@@ -142,6 +142,12 @@
   .contact{
     text-decoration: none;
   }
+
+  .contacts-holder{
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+  }
   .contact-image
   {
     max-width: 20px;
@@ -153,7 +159,8 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    align-items: end;
+    flex-grow: 1;
+    align-items: center;
   }
   .content-timeline{
     flex-grow:13;
@@ -270,8 +277,12 @@
   border-radius: 6px;
 }
 
-/* Media queries - Responsive timeline on screens less than 600px wide */
+/* Media queries - Responsive page on screens less than 600px wide */
 @media screen and (max-width: 600px) {
+  .profile-name{
+    font-size: 1.5em;
+    border-top: 1px solid black;
+  }
   .content-timeline .timeline::after {
     left: 31px;
   }
