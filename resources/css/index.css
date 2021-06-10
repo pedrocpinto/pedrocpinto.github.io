@@ -85,7 +85,7 @@ body{
   .skills-card:hover{
     cursor: pointer;
     transform: scale(1.2);
-     transition: transform .2s
+     transition: transform .1s
   }
 
   .skill-description{
@@ -102,7 +102,7 @@ body{
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     background-color: steelblue;
     padding-left: 10px;
@@ -122,6 +122,7 @@ body{
   
   .profile-name{
     border-bottom:1px solid white;
+    padding: 0 1rem 0 1rem;
   }
   .skills-image{
     max-width: 80px;
@@ -138,7 +139,11 @@ body{
   }
   .contact-image
   {
-    max-width: 20px;
+    max-width: 30px;
+  }
+
+  .contact-image:hover{
+    opacity: 0.5;
   }
   .contact-image:not(.mail){
     
@@ -147,9 +152,9 @@ body{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    flex-grow: 1;
     align-items: center;
-    font-size: 50px
+    font-size: 50px;
+    margin: 0 4rem 0 4rem;
   }
   .content-timeline{
     flex-grow:13;
