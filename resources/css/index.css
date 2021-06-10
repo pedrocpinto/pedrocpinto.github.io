@@ -1,5 +1,7 @@
-.body{
-    font-family: 'Courier New';
+body{
+   background-color: white;
+   font-family: Helvetica, sans-serif;
+   padding: 0 5rem 0 5rem
   }
   .main-page-header{
     width: 100%;
@@ -14,8 +16,7 @@
   }
 
   .content-holder{
-    background-color: steelblue;
-    padding: 0 8rem 0 8rem;
+    background-color: white;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -30,13 +31,8 @@
     background-color: lightgrey;
     margin-bottom: 2rem;
   }
-
-  .cv-maincontent-header{
-  
-    text-align: center;
-  }
   .profile-profession{
-    font-size: 18px;
+    font-size: 28px;
   }
   
   .timeline-card-holder{
@@ -47,10 +43,8 @@
     
   }
   .timeline-card{
-    background: linear-gradient(0deg,lightgray,white);
     width: 500px;
     min-height: 50px;
-    border-radius: 5px;
     padding: 0 5px 0 5px;
     box-shadow:rgba(36, 37, 38, 0.04) 4px 4px 15px 0px
 
@@ -71,10 +65,9 @@
   }
 
   .skills-card{
-    background-color: white;
+    background-color: #f5f5f5;
     width: 200px;
     min-height: 50px;
-    border-radius: 5px;
     padding: 0 5px 0 5px;
     margin: 0 5px 0 5px;
     color: black;
@@ -105,33 +98,28 @@
     justify-content: flex-start;
   }
 
-  #laravel-skills-card{
-  
-    background: linear-gradient(270deg,white,white);
-  }
-  #javacsript-skills-card{
-    background: linear-gradient(180deg,white,white);
-  }
-  #css-skills-card{
-    background: linear-gradient(0deg,white,white);
-  }
   .profile-holder{
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    background-color: gray;
+    background-color: steelblue;
     padding-left: 10px;
     box-shadow: 0 3px 3px rgb(0 0 0 / 20%);
   
   }
   .profile-photo{
+    background-color: red;
     max-width: 170px;
     width: 100%;
-      height: auto;
-      margin-right: 2rem;
+    height: auto;
+    margin-right: 2rem;
+    padding: 1rem;
+    background: linear-gradient(to right, white, #f5f5f5);
+    padding: 3px;
   }
+  
   .profile-name{
     border-bottom:1px solid white;
   }
@@ -161,6 +149,7 @@
     flex-wrap: wrap;
     flex-grow: 1;
     align-items: center;
+    font-size: 50px
   }
   .content-timeline{
     flex-grow:13;
@@ -169,27 +158,28 @@
   .skills-holder{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    border-radius: 6px;
     max-width: 100%;
-    color: white;
-    text-shadow: 0px 2px 3px rgba(0,0,0,0.3);
+    color: steelblue;
+  }
+
+  .skills-header{
+    width: 100%;
+    padding: 1rem;
+  background: linear-gradient(to right, white, steelblue);
+  padding: 3px;
   }
 
   .skills-holder .container{
-    max-width: 60%;
+    width: 100%
   }
 
   .range-date{
-    color: gray;
+    color: black;
   }
   * {
   box-sizing: border-box;
-}
-  body {
-  background-color: steelblue;
-  font-family: Helvetica, sans-serif;
 }
 
 /* The actual timeline (the vertical ruler) */
@@ -236,20 +226,6 @@
   left: 0;
 }
 
-/* Add arrows to the left container (pointing right) */
-.content-timeline .left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
-
 /* Add arrows to the right container (pointing left) */
 .content-timeline .right::before {
   content: " ";
@@ -261,7 +237,7 @@
   left: 30px;
   border: medium solid white;
   border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
+  border-color: transparent #f5f5f5 transparent transparent;
 }
 
 /* Fix the circle for containers on the right side */
@@ -272,9 +248,15 @@
 /* The actual content */
 .content-timeline .content {
   padding: 20px 30px;
-  background-color: white;
+  background-color: #f5f5f5;
   position: relative;
-  border-radius: 6px;
+}
+
+.timeline-header{
+  color: steelblue;
+ padding: 1rem;
+  background: linear-gradient(to right, white, steelblue);
+  padding: 3px;
 }
 
 /* Media queries - Responsive page on screens less than 600px wide */
